@@ -1,0 +1,74 @@
+.App{
+  height: 100vh;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form{
+  width: 400px;
+  height: 700px;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #91cdd9;
+}
+header{
+  width: 100%;
+  height: 80px;
+  /* border: 1px solid black; */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #393e46;
+}
+header h1{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  font-variant: small-caps;
+  color: white;
+}
+.submit{
+  background-color: #393e46;
+  color: white;
+}
+input{
+  width: 70%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+}
+#forInput{
+  width: 400px;
+  height: 150px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#forInput p{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f70776;
+}
+.inc{
+  font-size: 45px;
+  color: #f70776;
+}
+
+@media(max-width:480px)
+{
+  form{
+    width: 450px;
+  }
+}
