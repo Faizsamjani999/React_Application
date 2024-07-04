@@ -1,0 +1,9 @@
+#main{
+  width: 100%;
+  border: 1px solid black;
+}
+#headerFont{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 400px;
+}
