@@ -1,0 +1,13 @@
+#navlinkId{
+    text-decoration: none;
+    font-size: 25px;
+    margin-left: 20px;
+    color: black;
+}
+.active{
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    background-color: pink;
+    color: white;
+}
