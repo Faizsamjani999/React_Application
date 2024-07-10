@@ -6,6 +6,7 @@ import Product from '../Pages/Product'
 import Cart from '../Pages/Cart'
 import Blog from '../Pages/Blog'
 import Contact from '../Pages/Contact'
+import SingleProduct from '../Pages/SingleProduct'
 
 function MainRouter() {
   return (
@@ -14,6 +15,7 @@ function MainRouter() {
             <Route path='/' element={<Home/>}></Route>
             <Route path='/about' element={<About/>}></Route>
             <Route path='/product' element={<Product/>}></Route>
+            <Route path='/product/:id' element={<SingleProduct/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/blog' element={<Blog/>}></Route>
             <Route path='/contact' element={<Contact/>} ></Route>

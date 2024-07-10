@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import "./Product.modules.css"
+import { Link } from 'react-router-dom';
 
 function Product() {
   const [arr,setArr] = useState([]);
@@ -35,7 +36,9 @@ function Product() {
                   {
                     arr.map((val)=>{
                       return(
-                        <div class="col-md-3 col-sm-6">
+                        
+                          <div class="col-md-3 col-sm-6">
+                            <Link to={`/product/${val.id}`}>
                         <div class="product-grid">
                             <div class="product-image">
                                 <a href="#" class="image">
@@ -56,7 +59,9 @@ function Product() {
                                 <div class="price">${val.price}</div>
                             </div>
                         </div>
+                        </Link>
                     </div>
+                         
                       )
                     })
                   }
