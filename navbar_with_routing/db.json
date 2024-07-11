@@ -1,0 +1,97 @@
+{
+  "user": [
+    {
+      "id": "1af4",
+      "name": "Faiz",
+      "email": "faizmemon34@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "436c",
+      "name": "baadi",
+      "email": "fbaadi123@gmail.com",
+      "password": "420"
+    },
+    {
+      "id": "bce8",
+      "name": "kirti",
+      "email": "kirti123@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "052e",
+      "name": "Mohammadfaiz Samjani",
+      "email": "faizmemon34@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "574b",
+      "name": "monku",
+      "email": "bapodarayash65@gmail.com",
+      "password": "6531"
+    },
+    {
+      "id": "7264",
+      "name": "baadi",
+      "email": "baadi420@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "cad4",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "640b",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "d7b2",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "12f5",
+      "name": "baadi",
+      "email": "badi123@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "1743",
+      "name": "Henil",
+      "email": "henil123@gmail.com",
+      "password": "420"
+    },
+    {
+      "id": "c75a",
+      "name": "Faiz",
+      "email": "faizmemon34@gmail.com",
+      "password": "65984"
+    },
+    {
+      "id": "ab51",
+      "name": "deepaksir",
+      "email": "deepaksir123@gmail.com",
+      "password": "123"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
