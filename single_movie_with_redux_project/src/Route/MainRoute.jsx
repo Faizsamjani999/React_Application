@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes,Route } from "react-router-dom"
 import Home from '../Pages/Home'
-import SearchMovie from '../Pages/SearchMovie'
+import SearchMovie from "../Pages/SearchMovie"
 
 function MainRoute() {
   return (
@@ -15,3 +15,5 @@ function MainRoute() {
 }
 
 export default MainRoute
+
+

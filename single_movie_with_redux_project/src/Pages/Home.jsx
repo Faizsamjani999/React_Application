@@ -8,63 +8,7 @@ function Home() {
 
 <section>
   
-  <div class="movie-ticket-book">
-    <div class="choose-date">
-      <p class="heading">
-        choose date:
-      </p>
-       <div class="wrapper">
-       <div class="carousel owl-carousel">
-
-        <div class="card card-1">
-          <p>JUN 1t</p>
-          <p>MON</p>
-        </div>
-        <div class="card card-2">
-          <p>JUN 2nd</p>
-          <p>TUE</p>
-        </div>
-        <div class="card card-3">
-          <p>JUN 3nd</p>
-          <p>wed</p>
-        </div>
-        <div class="card card-4">
-          <p>JUN 4nd</p>
-          <p>thu</p>
-        </div>
-         </div>
-       <div class="marker"></div>
-      </div>
-    </div>
-    <div class="choose-time">
-     <p class="heading">
-        avalible times:
-      </p>
-       <div class="wrapper">
-       <div class="carousel owl-carousel">
-
-        <div class="card card-1">
-          <p>3D</p>
-          <p>14:45</p>
-        </div>
-        <div class="card card-2">
-          <p>3D</p>
-          <p>11:45</p>
-        </div>
-        <div class="card card-3">
-          <p>2D</p>
-          <p>12:15</p>
-        </div>
-        <div class="card card-4">
-          <p>3D</p>
-          <p>13:00</p>
-        </div>
-         </div>
-       <div class="marker"></div>
-      </div>
-    </div>
-    <button>Buy ticket</button>
-  </div>
+  
   
   
   
