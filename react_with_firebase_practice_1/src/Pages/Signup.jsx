@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Signup.modules.css"
-import { addDoc, collection } from "firebase/firestore"
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore"
 import { db } from "../Firebase/firebase"
-import { useNavigate } from 'react-router-dom'
+
 
 const obj = {
     fname : "",
@@ -13,10 +13,14 @@ const obj = {
 
 function Signup() {
     const [state,setState] = useState(obj) 
+    const [arr,setArr] = useState([]);
+
+    const [dataShow,setDataShow] = useState(true)
+    const [chnageBtn,setChangeBtn] = useState(null)
     
     const userCollection = collection(db,"registerUser")
 
-    const navigate = useNavigate();
+    
 
     const handleChange = (e)=>{
         let {name,value} = e.target;
@@ -26,20 +30,73 @@ function Signup() {
 
     const handleSubmit = async(e)=>{
         e.preventDefault()
-        console.log(state);
         
+        if(chnageBtn != null)
+        {
+            const updated = doc(db,"registerUser",chnageBtn)
+
+            await updateDoc(updated,state)
+            alert("Data Updated Successfully...")
+        }
+        else{
+            await addDoc(userCollection,state)
+            alert("Data Register Successfully....")
+            
+        }
         
 
-        await addDoc(userCollection,state)
-        alert("Data Register Successfully....")
+        
         setState(obj)
+        setDataShow(false)
+        getData()
     }
-    const showData = ()=>{
-        navigate("/showData")
+
+    const getData = async()=>{
+        let data = await getDocs(userCollection);
+        // console.log(data);
+
+        let arr = data.docs.map((val)=>{
+            return{id : val.id,...val.data()}
+        })
+        console.log(arr);
+        setArr(arr);
+        
     }
+    useEffect(()=>{
+        getData()
+    },[])
+
+    const handleDelete = async(id)=>{
+        console.log(id)
+        const deleteData = doc(db,"registerUser",id)
+        await deleteDoc(deleteData)
+        alert(`${deleteData.id} Your Data Deleted Syccessfully...`)
+        getData()
+    }
+
+    const handleEdit = (id)=>{
+        setDataShow(true)
+        console.log(id);
+        setChangeBtn(id)
+
+        arr.forEach((val)=>{
+            if(val.id == id)
+            {
+                setState(val)
+            }
+        })
+        
+    }
+
+
+
+
+
+
+    
     
   return (
-    <div className="container">
+    dataShow ? <div className="container">
     <div className="login-box">
         <h1>Sign-Up</h1>
         <form onSubmit={handleSubmit}>
@@ -59,13 +116,39 @@ function Signup() {
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" value={state.password} required onChange={handleChange} />
             </div>
-            <button type="submit" className="btn">Submit</button><br /><br /><br />
+            <input type="submit" className='btn' value={chnageBtn != null ? "Update" : "Submit"}/>
+            
+            <br /><br /><br />
             
         </form>
         
-        <button className="btn" style={{backgroundColor:"red"}} onClick={showData}>Show Register Data</button>
+        <button className="btn" style={{backgroundColor:"red"}} onClick={()=>setDataShow(false)}>Show Register Data</button>
     </div>
-</div>
+</div> : <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+        <table border={1} style={{textAlign:"center",width:"800px"}}>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th colSpan={2}>Action</th>
+            </tr>
+            {
+                arr.map((val)=>{
+                    return(
+                        <tr key={val.id}>
+                            <td>{val.fname}</td>
+                            <td>{val.lname}</td>
+                            <td>{val.email}</td>
+                            <td><button onClick={()=>handleEdit(val.id)}>Edit</button></td>
+                            <td><button onClick={()=>handleDelete(val.id)}>Delete</button></td>
+                        </tr>
+                    )
+                })
+            }
+        </table>
+       
+        <button style={{marginTop:"50px",width:"170px",height:"40px",backgroundColor:"dodgerblue",border:"none",color:"white",fontWeight:"bold"}} onClick={()=>setDataShow(true)}>Back To Home</button>
+    </div>
   )
 }
 
